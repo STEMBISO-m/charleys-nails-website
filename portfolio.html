@@ -1,96 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Charley's Nails & Eye Lashes</title>
+<section class="portfolio">
+    <h2>Our Portfolio</h2>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="index.html">Charley's Nails & Eye Lashes</a>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-        <a href="booking.html">Book</a>
-      </nav>
+    <div class="gallery">
+        <img src="images/nail1.jpeg" alt="Nail design 1" onclick="openModal(this)">
+        <img src="images/nail2.jpeg" alt="Nail design 2" onclick="openModal(this)">
+        <img src="images/nail3.jpeg" alt="Nail design 3" onclick="openModal(this)">
+        <img src="images/nail4.jpeg" alt="Nail design 2" onclick="openModal(this)">
+        <img src="images/nail5.jpeg" alt="Nail design 3" onclick="openModal(this)">
     </div>
-  </header>
+</section>
 
-  <main class="portfolio-wrap">
-    <section class="intro">
-      <h1>Our Luxury Portfolio</h1>
-      <p class="lead">Hand-crafted nails and lashes — each design created with precision and care.</p>
-    </section>
-
-    <!-- GALLERY GRID -->
-    <section class="gallery-grid" id="galleryGrid" aria-label="Portfolio gallery">
-      <!-- Images: keep names in your images/ folder and match them below -->
-      <figure class="thumb" data-src="images/nail1.jpeg" data-caption="Elegant French with Shimmer">
-        <img src="images/nail1.jpeg" alt="Elegant French with shimmer" loading="lazy">
-        <figcaption>Elegant French with Shimmer</figcaption>
-      </figure>
-
-      <figure class="thumb" data-src="images/nail2.jpeg" data-caption="Bold Acrylic Art">
-        <img src="images/nail2.jpeg" alt="Bold acrylic art" loading="lazy">
-        <figcaption>Bold Acrylic Art</figcaption>
-      </figure>
-
-      <figure class="thumb" data-src="images/nail3.jpeg" data-caption="Soft Ombré Gel">
-        <img src="images/nail3.jpeg" alt="Soft ombré gel" loading="lazy">
-        <figcaption>Soft Ombré Gel</figcaption>
-      </figure>
-
-      <figure class="thumb" data-src="images/nail4.jpeg" data-caption="Bold Acrylic Art">
-        <img src="images/nail4.jpeg" alt="Bold acrylic art" loading="lazy">
-        <figcaption>Bold Acrylic Art</figcaption>
-      </figure>
-
-      <figure class="thumb" data-src="images/nail5.jpeg" data-caption="Soft Ombré Gel">
-        <img src="images/nail5.jpeg" alt="Soft ombré gel" loading="lazy">
-        <figcaption>Soft Ombré Gel</figcaption>
-      </figure>
-
-      <!-- Add more <figure> items following the same pattern -->
-    </section>
-  </main>
-
-  <!-- LUXURY LIGHTBOX / MODAL -->
-  <div id="lightbox" class="lux-lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
-    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
-
-    <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous image" title="Previous">‹</button>
-    <div class="lb-stage" id="lbStage" tabindex="0">
-      <img id="lbImage" class="lb-image" alt="">
-      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
-    </div>
-    <button class="lb-arrow lb-next" id="lbNext" aria-label="Next image" title="Next">›</button>
-
-    <div class="lb-footer">
-      <span class="lb-counter" id="lbCounter"></span>
-    </div>
-  </div>
+<!-- Image Modal -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
 
 <script>
-/* ------------------------------
-   Gallery Lightbox with swipe,
-   arrows, captions, keyboard & audio
-   ------------------------------ */
+function openModal(imgElement) {
+    document.getElementById("imgModal").style.display = "block";
+    document.getElementById("modalImg").src = imgElement.src;
+}
 
-(function(){
-  // Collect thumbs
-  const thumbs = Array.from(document.querySelectorAll('.gallery-grid .thumb'));
-  if (!thumbs.length) return;
+function closeModal() {
+    document.getElementById("imgModal").style.display = "none";
+}
+</script>
 
-  // State
-  let currentIndex = 0;
-  const images = thumbs.map(t => t.dataset.src);
-  const captions = thumbs.map(t => t.dataset.c
 
 
