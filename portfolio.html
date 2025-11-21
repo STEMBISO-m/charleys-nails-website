@@ -1,31 +1,34 @@
-<section class="portfolio">
-    <h2>Our Portfolio</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Charley's Nails</title>
 
-    <div class="gallery">
-        <img src="images/nail1.jpeg" alt="Nail design 1" onclick="openModal(this)">
-        <img src="images/nail2.jpeg" alt="Nail design 2" onclick="openModal(this)">
-        <img src="images/nail3.jpeg" alt="Nail design 3" onclick="openModal(this)">
-        <img src="images/nail4.jpeg" alt="Nail design 2" onclick="openModal(this)">
-        <img src="images/nail5.jpeg" alt="Nail design 3" onclick="openModal(this)">
-    </div>
-</section>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-<!-- Image Modal -->
-<div id="imgModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImg">
-</div>
+  <header class="topbar">
+    <a href="index.html" class="logo">← Home</a>
+    <h1>Portfolio</h1>
+  </header>
 
-<script>
-function openModal(imgElement) {
-    document.getElementById("imgModal").style.display = "block";
-    document.getElementById("modalImg").src = imgElement.src;
-}
+  <main class="gallery-grid">
+    <figure class="thumb"><img src="images/nail1.jpeg" alt="Nail design 1"><figcaption>Elegant French with shimmer</figcaption></figure>
+    <figure class="thumb"><img src="images/nail2.jpeg" alt="Nail design 2"><figcaption>Bold acrylic art</figcaption></figure>
+    <figure class="thumb"><img src="images/nail3.jpeg" alt="Nail design 3"><figcaption>Soft ombré gel</figcaption></figure>
+    <figure class="thumb"><img src="images/nail4.jpeg" alt="Nail design 4"><figcaption>Bold acrylic art</figcaption></figure>
+    <figure class="thumb"><img src="images/nail5.jpeg" alt="Nail design 5"><figcaption>Soft ombré gel</figcaption></figure>
+  </main>
 
-function closeModal() {
-    document.getElementById("imgModal").style.display = "none";
-}
-</script>
+  <footer class="footer">
+    <a href="booking.html" class="btn">Book Now</a>
+  </footer>
+
+</body>
+</html>
 
 
 
