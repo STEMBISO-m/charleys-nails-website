@@ -1,1 +1,125 @@
+:root {
+  --bg: #fffafc;
+  --accent: #d63384;
+  --dark: #222;
+  --muted: #666;
+  --card: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(#fff3fa, #fffafb);
+}
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  margin: 0 0 10px;
+}
+.luxury {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Navigation Buttons */
+.nav .btn {
+  padding: 12px 20px;
+  margin: 8px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav .btn.outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+/* CONTENT */
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.highlights {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  width: 250px;
+}
+
+/* PORTFOLIO GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.thumb img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.thumb figcaption {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* BOOKING PAGE */
+.booking-wrap {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+}
+
+/* RESPONSIVE */
+@media (min-width: 900px) {
+  .booking-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
