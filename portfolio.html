@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Charley's Nails</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Charley's Nails & Eye Lashes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <header class="topbar">
-    <a href="index.html" class="logo">← Home</a>
-    <h1>Portfolio</h1>
-  </header>
+    <header>
+        <h1>Charley's Nails & Eye Lashes</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="booking.html">Book Appointment</a>
+        </nav>
+    </header>
 
-  <main class="gallery-grid">
-    <figure class="thumb"><img src="images/nail1.jpeg" alt="Nail design 1"><figcaption>Elegant French with shimmer</figcaption></figure>
-    <figure class="thumb"><img src="images/nail2.jpeg" alt="Nail design 2"><figcaption>Bold acrylic art</figcaption></figure>
-    <figure class="thumb"><img src="images/nail3.jpeg" alt="Nail design 3"><figcaption>Soft ombré gel</figcaption></figure>
-    <figure class="thumb"><img src="images/nail4.jpeg" alt="Nail design 2"><figcaption>Bold acrylic art</figcaption></figure>
-    <figure class="thumb"><img src="images/nail5.jpeg" alt="Nail design 3"><figcaption>Soft ombré gel</figcaption></figure>
-  </main>
+    <section class="portfolio">
+        <h2>Our Luxury Portfolio</h2>
 
-  <footer class="footer">
-    <a href="booking.html" class="btn">Book Now</a>
-  </footer>
+        <div class="gallery">
+            <img src="images/nail1.jpeg" alt="Nail design 1" onclick="openModal(this)">
+            <img src="images/nail2.jpeg" alt="Nail design 2" onclick="openModal(this)">
+            <img src="images/nail3.jpeg" alt="Nail design 3" onclick="openModal(this)">
+            <img src="images/nail4.jpeg" alt="Nail design 2" onclick="openModal(this)">
+            <img src="images/nail5.jpeg" alt="Nail design 3" onclick="openModal(this)">
+        </div>
+    </section>
+
+    <!-- Luxury Image Modal -->
+    <div id="luxModal" class="lux-modal">
+        <div class="lux-modal-content">
+            <span class="lux-close" onclick="closeLuxury()">&times;</span>
+            <img id="luxImg" class="lux-img">
+        </div>
+    </div>
+
+    <script>
+    function openModal(img) {
+        document.getElementById("luxModal").style.display = "flex";
+        document.getElementById("luxImg").src = img.src;
+    }
+
+    function closeLuxury() {
+        document.getElementById("luxModal").style.display = "none";
+    }
+    </script>
 
 </body>
 </html>
