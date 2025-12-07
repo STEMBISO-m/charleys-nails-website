@@ -69,6 +69,40 @@ const galleryImages = [
   { src: "images/lashes2.jpeg", caption: "Lash Design 2", category: "lashes" },
   // Add more lashes images
   { src: "images/mani1.jpeg", caption: "Manicure 1", category: "mani" },
+  { src: "images/mani2.jpeg", caption: "Manicure 2", category: "mani" },
+  { src: "images/mani3.jpeg", caption: "Manicure 3", category: "mani" },
+  { src: "images/mani4.jpeg", caption: "Manicure 4", category: "mani" },
+  { src: "images/mani5.jpeg", caption: "Manicure 5", category: "mani" },
+  { src: "images/mani6.jpeg", caption: "Manicure 6", category: "mani" },
+  { src: "images/mani7.jpeg", caption: "Manicure 7", category: "mani" },
+  { src: "images/mani8.jpeg", caption: "Manicure 8", category: "mani" },
+  { src: "images/mani9.jpeg", caption: "Manicure 9", category: "mani" },
+  { src: "images/mani10.jpeg", caption: "Manicure 10", category: "mani" },
+  { src: "images/mani11.jpeg", caption: "Manicure 11", category: "mani" },
+  { src: "images/mani12.jpeg", caption: "Manicure 12", category: "mani" },
+  { src: "images/mani13.jpeg", caption: "Manicure 13", category: "mani" },
+  { src: "images/mani14.jpeg", caption: "Manicure 14", category: "mani" },
+  { src: "images/mani15.jpeg", caption: "Manicure 15", category: "mani" }
+  { src: "images/mani16.jpeg", caption: "Manicure 16", category: "mani" }
+  { src: "images/mani17.jpeg", caption: "Manicure 17", category: "mani" }
+{ src: "images/mani18.jpeg", caption: "Manicure 18", category: "mani" }
+{ src: "images/mani19.jpeg", caption: "Manicure 19", category: "mani" }
+{ src: "images/mani20.jpeg", caption: "Manicure 20", category: "mani" }
+{ src: "images/mani21.jpeg", caption: "Manicure 12", category: "mani" }
+{ src: "images/mani22.jpeg", caption: "Manicure 22", category: "mani" }
+{ src: "images/mani23.jpeg", caption: "Manicure 23", category: "mani" }
+{ src: "images/mani24.jpeg", caption: "Manicure 24", category: "mani" }
+{ src: "images/mani25.jpeg", caption: "Manicure 25", category: "mani" }
+{ src: "images/mani26.jpeg", caption: "Manicure 26", category: "mani" }
+{ src: "images/mani27.jpeg", caption: "Manicure 27", category: "mani" }
+{ src: "images/mani28.jpeg", caption: "Manicure 28", category: "mani" }
+{ src: "images/mani29.jpeg", caption: "Manicure 29", category: "mani" }
+{ src: "images/mani30.jpeg", caption: "Manicure 30", category: "mani" }
+{ src: "images/mani31.jpeg", caption: "Manicure 31", category: "mani" }
+{ src: "images/mani32.jpeg", caption: "Manicure 32", category: "mani" }
+{ src: "images/mani33.jpeg", caption: "Manicure 33", category: "mani" }
+{ src: "images/mani34.jpeg", caption: "Manicure 34", category: "mani" }
+{ src: "images/mani35.jpeg", caption: "Manicure 35", category: "mani" }
   // Add more manicure images
 ];
 
