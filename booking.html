@@ -1,74 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book Appointment — Charley's Nails</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Book Appointment — Charley’s Nails</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"/>
+
 </head>
 <body>
 
-  <header class="topbar">
-    <a href="index.html" class="logo">← Home</a>
-    <h1>Book Your Appointment</h1>
-  </header>
+<header class="topbar">
+  <a href="index.html" class="logo">← Home</a>
+  <h1>Book Your Appointment</h1>
+</header>
 
-  <main class="booking-wrap">
 
-    <section class="contact-details card">
-      <h2>Contact & Location</h2>
-      <p><strong>Address:</strong> 36 Madeira Street, Mthatha 5100</p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/27710668814" target="_blank">071 066 8814</a></p>
-      <p><strong>Email:</strong> <a href="mailto:cajiboye49@gmail.com">cajiboye49@gmail.com</a></p>
-      <p><em>Open 24/7</em></p>
-    </section>
+<section class="booking-container">
 
-    <section class="card form-card">
-      <h2>Quick Booking</h2>
+  <!-- FORM AREA -->
+  <div class="booking-form-box">
 
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="booking-form">
-        <label>Name</label>
-        <input name="name" required>
+    <h2>
+      <img src="https://img.icons8.com/fluency/48/planner.png"/>
+      Book with Charley
+    </h2>
 
-        <label>Phone / WhatsApp</label>
-        <input name="phone" required>
+    <form class="booking-form">
 
-        <label>Service</label>
-        <select name="service" required>
-          <option value="">Choose a service</option>
-          <option>Acrylic Nails</option>
-          <option>Gel Polish</option>
-          <option>Nail Art</option>
-          <option>Eye Lashes</option>
-        </select>
+      <label>
+        <img src="https://img.icons8.com/fluency/24/user.png"/>
+        Full Name
+      </label>
+      <input type="text" placeholder="Enter your full name" required>
 
-        <label>Preferred Date</label>
-        <input type="date" name="date" required>
+      <label>
+        <img src="https://img.icons8.com/fluency/24/phone.png"/>
+        Phone Number
+      </label>
+      <input type="tel" placeholder="e.g 071 000 0000" required>
 
-        <label>Preferred Time</label>
-        <input type="time" name="time" required>
+      <label>
+        <img src="https://img.icons8.com/fluency/24/services.png"/>
+        Select Service
+      </label>
+      <select required>
+        <option>Select a service</option>
+        <option>Acrylic Nails</option>
+        <option>Gel Nails</option>
+        <option>Eye Lashes</option>
+        <option>Manicure & Pedicure</option>
+        <option>Combo Package</option>
+      </select>
 
-        <label>Notes (Optional)</label>
-        <textarea name="notes" rows="3"></textarea>
+      <label>
+        <img src="https://img.icons8.com/fluency/24/calendar.png"/>
+        Appointment Date
+      </label>
+      <input type="date" required>
 
-        <button type="submit" class="btn">Send Booking</button>
-      </form>
+      <label>
+        <img src="https://img.icons8.com/fluency/24/clock.png"/>
+        Appointment Time
+      </label>
+      <input type="time" required>
 
-      <p class="hint">Or WhatsApp us at <a href="https://wa.me/27710668814" target="_blank">071 066 8814</a> — fastest reply!</p>
-    </section>
+      <label>
+        <img src="https://img.icons8.com/fluency/24/comments.png"/>
+        Additional Notes
+      </label>
+      <textarea rows="4" placeholder="Any special request..."></textarea>
 
-  </main>
+      <button type="submit" class="btn">Confirm Booking</button>
 
-  <footer class="footer">
-    <p>© <span id="year2"></span> Charley's Nails & Eye Lashes</p>
-  </footer>
+    </form>
+  </div>
 
-  <script>
-    document.getElementById('year2').textContent = new Date().getFullYear();
-  </script>
+
+  <!-- CONTACT AREA -->
+  <div class="booking-info-box">
+
+    <h2>
+      <img src="https://img.icons8.com/fluency/48/contacts.png"/>
+      Contact & Location
+    </h2>
+
+    <p>
+      <img src="https://img.icons8.com/fluency/24/marker.png"/>
+      36 Madeira Street, Mthatha 5100
+    </p>
+
+    <p>
+      <img src="https://img.icons8.com/fluency/24/whatsapp.png"/>
+      071 066 8814
+    </p>
+
+    <p>
+      <img src="https://img.icons8.com/fluency/24/new-post.png"/>
+      cajiboye49@gmail.com
+    </p>
+
+    <p>
+      <img src="https://img.icons8.com/fluency/24/clock.png"/>
+      Open 24/7
+    </p>
+
+    <div class="booking-socials">
+
+      <a class="icon-btn" href="https://wa.me/27710668814" target="_blank">
+        <img src="https://img.icons8.com/fluency/48/whatsapp.png"/>
+        <span>Chat on WhatsApp</span>
+      </a>
+
+      <a class="icon-btn" href="mailto:cajiboye49@gmail.com">
+        <img src="https://img.icons8.com/fluency/48/new-post.png"/>
+        <span>Email Me</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 </body>
 </html>
+
 
