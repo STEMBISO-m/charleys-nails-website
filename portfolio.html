@@ -1,142 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Charley's Nails & Eye Lashes</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Portfolio — Charley's Nails</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
 <header class="topbar">
   <a href="index.html" class="logo">← Home</a>
-  <h1>Luxury Portfolio</h1>
+  <h1>Portfolio</h1>
 </header>
 
-<main class="gallery-grid">
+<!-- CATEGORY BUTTONS -->
+<section class="portfolio-categories">
+  <button class="category-btn active" onclick="filterCategory('all')">All</button>
+  <button class="category-btn" onclick="filterCategory('acrylic')">Acrylic Nails</button>
+  <button class="category-btn" onclick="filterCategory('gel')">Gel Nails</button>
+  <button class="category-btn" onclick="filterCategory('lashes')">Eye Lashes</button>
+  <button class="category-btn" onclick="filterCategory('mani')">Manicure & Pedicure</button>
+</section>
 
-  <figure class="thumb" onclick="openLightbox(0)">
-    <img src="images/nail1.jpeg" alt="Elegant French with shimmer">
-    <figcaption>Elegant French with shimmer</figcaption>
-  </figure>
-
-  <figure class="thumb" onclick="openLightbox(1)">
-    <img src="images/nail2.jpeg" alt="Bold acrylic art">
-    <figcaption>Bold acrylic art</figcaption>
-  </figure>
-
-  <figure class="thumb" onclick="openLightbox(2)">
-    <img src="images/nail3.jpeg" alt="Soft ombré gel">
-    <figcaption>Soft ombré gel</figcaption>
-  </figure>
-
-  <figure class="thumb" onclick="openLightbox(3)">
-    <img src="images/nail4.jpeg" alt="Luxury chrome set">
-    <figcaption>Luxury chrome set</figcaption>
-  </figure>
-
-  <figure class="thumb" onclick="openLightbox(4)">
-    <img src="images/nail5.jpeg" alt="Classic nude elegance">
-    <figcaption>Classic nude elegance</figcaption>
-  </figure>
-
+<!-- GALLERY -->
+<main class="gallery-grid" id="gallery">
+  <!-- All images will be dynamically inserted by JS -->
 </main>
-
-<footer class="footer">
-
-  <a class="icon-btn" href="https://wa.me/27710668814" target="_blank">
-    <img src="https://img.icons8.com/fluency/48/whatsapp.png"/>
-    <span>WhatsApp</span>
-  </a>
-
-  <a class="icon-btn" href="mailto:cajiboye49@gmail.com">
-    <img src="https://img.icons8.com/fluency/48/new-post.png"/>
-    <span>Email</span>
-  </a>
-
-  <a href="booking.html" class="btn">Book Appointment</a>
-
-</footer>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
   <span class="close" onclick="closeLightbox()">×</span>
-
   <img id="lightbox-img">
   <p id="lightbox-caption"></p>
-
   <button class="nav-btn prev" onclick="changeImage(-1)">❮</button>
   <button class="nav-btn next" onclick="changeImage(1)">❯</button>
 </div>
 
-<!-- CLICK SOUND -->
 <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
-<script>
-  const images = [
-    { src: "images/nail1.jpeg", caption: "Elegant French with shimmer" },
-    { src: "images/nail2.jpeg", caption: "Bold acrylic art" },
-    { src: "images/nail3.jpeg", caption: "Soft ombré gel" },
-    { src: "images/nail4.jpeg", caption: "Luxury chrome set" },
-    { src: "images/nail5.jpeg", caption: "Classic nude elegance" },
-  ];
-
-  let currentIndex = 0;
-
-  function playSound() {
-    document.getElementById("clickSound").play();
-  }
-
-  function openLightbox(index) {
-    playSound();
-    currentIndex = index;
-    const lightbox = document.getElementById("lightbox");
-    const img = document.getElementById("lightbox-img");
-    const caption = document.getElementById("lightbox-caption");
-
-    img.src = images[currentIndex].src;
-    caption.textContent = images[currentIndex].caption;
-    lightbox.style.display = "flex";
-  }
-
-  function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-  }
-
-  function changeImage(direction) {
-    playSound();
-    currentIndex += direction;
-
-    if (currentIndex < 0) currentIndex = images.length - 1;
-    if (currentIndex >= images.length) currentIndex = 0;
-
-    const img = document.getElementById("lightbox-img");
-    const caption = document.getElementById("lightbox-caption");
-
-    img.src = images[currentIndex].src;
-    caption.textContent = images[currentIndex].caption;
-  }
-
-  // Swipe detection
-  let startX = 0;
-  const lightbox = document.getElementById("lightbox");
-
-  lightbox.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  lightbox.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) changeImage(1);
-    if (endX - startX > 50) changeImage(-1);
-  });
-</script>
-
+<script src="portfolio.js"></script>
 </body>
 </html>
-
-
-
-
