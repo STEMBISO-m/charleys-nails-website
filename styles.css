@@ -159,3 +159,45 @@ h1 {
 .next {
   right: 20px;
 }
+
+/* WELCOME PAGE CENTERED LUXURY */
+.welcome-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1a1607 10%, #0f0c05 70%);
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-box {
+  max-width: 700px;
+}
+
+.welcome-box h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.luxury-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #fff7e6;
+  margin-bottom: 40px;
+}
+
+.welcome-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
