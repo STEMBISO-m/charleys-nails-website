@@ -16,10 +16,8 @@
   <h1>Book Your Appointment</h1>
 </header>
 
-
 <section class="booking-container">
 
-  <!-- FORM AREA -->
   <div class="booking-form-box">
 
     <h2>
@@ -27,26 +25,26 @@
       Book with Charley
     </h2>
 
-    <form class="booking-form">
+    <form class="booking-form" id="bookingForm">
 
       <label>
         <img src="https://img.icons8.com/fluency/24/user.png"/>
         Full Name
       </label>
-      <input type="text" placeholder="Enter your full name" required>
+      <input type="text" id="name" placeholder="Enter your full name" required>
 
       <label>
         <img src="https://img.icons8.com/fluency/24/phone.png"/>
         Phone Number
       </label>
-      <input type="tel" placeholder="e.g 071 000 0000" required>
+      <input type="tel" id="phone" placeholder="e.g 071 000 0000" required>
 
       <label>
         <img src="https://img.icons8.com/fluency/24/services.png"/>
         Select Service
       </label>
-      <select required>
-        <option>Select a service</option>
+      <select id="service" required>
+        <option value="">Select a service</option>
         <option>Acrylic Nails</option>
         <option>Gel Nails</option>
         <option>Eye Lashes</option>
@@ -58,21 +56,27 @@
         <img src="https://img.icons8.com/fluency/24/calendar.png"/>
         Appointment Date
       </label>
-      <input type="date" required>
+      <input type="date" id="date" required>
 
       <label>
         <img src="https://img.icons8.com/fluency/24/clock.png"/>
         Appointment Time
       </label>
-      <input type="time" required>
+      <input type="time" id="time" required>
 
       <label>
         <img src="https://img.icons8.com/fluency/24/comments.png"/>
         Additional Notes
       </label>
-      <textarea rows="4" placeholder="Any special request..."></textarea>
+      <textarea id="notes" rows="4" placeholder="Any special request..."></textarea>
 
-      <button type="submit" class="btn">Confirm Booking</button>
+      <button type="button" class="btn" onclick="sendBooking()">
+        Confirm Booking
+      </button>
+
+      <p id="successMsg" style="display:none; margin-top:15px; color:gold; text-align:center;">
+        ✅ If you come after the time you booked, you join the line.
+      </p>
 
     </form>
   </div>
@@ -124,7 +128,43 @@
 
 </section>
 
+<!-- ✅ SCRIPT ADDED (WhatsApp + Message) -->
+<script>
+function sendBooking() {
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const service = document.getElementById("service").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+  const notes = document.getElementById("notes").value || "None";
+
+  if (!name || !phone || !service || !date || !time) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  const message =
+    `Hello Charley's Nails 💅✨%0A%0A` +
+    `New Booking Request:%0A` +
+    `------------------------%0A` +
+    `Name: ${name}%0A` +
+    `Phone: ${phone}%0A` +
+    `Service: ${service}%0A` +
+    `Date: ${date}%0A` +
+    `Time: ${time}%0A` +
+    `Notes: ${notes}`;
+
+  window.open(`https://wa.me/27710668814?text=${message}`, "_blank");
+
+  document.getElementById("successMsg").style.display = "block";
+
+  document.getElementById("bookingForm").reset();
+}
+</script>
+
 </body>
 </html>
+
 
 
